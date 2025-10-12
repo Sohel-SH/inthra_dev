@@ -16,7 +16,7 @@ const PrivacyPolicyPage = () => {
           <h3 className="text-2xl font-semibold mb-2">Personal Data</h3>
           <p className="mb-4">While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to: Email address, First name and last name, Phone number, Address, State, Province, ZIP/Postal code, City, Cookies and Usage Data.</p>
           <h3 className="text-2xl font-semibold mb-2">Usage Data</h3>
-          <p className="mb-4">We may also collect information how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+          <p className="mb-4">We may also collect information how the Service is accessed and used (&quot;Usage Data&quot;). This Usage Data may include information such as your computer&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
         </section>
 
         <section className="mb-10">

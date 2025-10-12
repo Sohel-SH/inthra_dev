@@ -13,7 +13,7 @@ const TermsAndConditionsPage = () => {
             <h2 className="text-3xl font-bold mb-4">1. Introduction</h2>
             <p className="mb-4">
               Welcome to [Your Website Name]! These terms and conditions outline
-              the rules and regulations for the use of [Your Website Name]'s
+              the rules and regulations for the use of [Your Website Name]&apos;s
               Website, located at [Your Website URL].
             </p>
             <p className="mb-4">
@@ -81,7 +81,7 @@ const TermsAndConditionsPage = () => {
           <section className="mb-10">
             <h2 className="text-3xl font-bold mb-4">4. Your Content</h2>
             <p className="mb-4">
-              In these Website Standard Terms and Conditions, "Your Content"
+              In these Website Standard Terms and Conditions, &quot;Your Content&quot;
               shall mean any audio, video text, images or other material you
               choose to display on this Website. By displaying Your Content, you
               grant [Your Website Name] a non-exclusive, worldwide irrevocable,
@@ -90,7 +90,7 @@ const TermsAndConditionsPage = () => {
             </p>
             <p className="mb-4">
               Your Content must be your own and must not be invading any
-              third-party’s rights. [Your Website Name] reserves the right to
+              third-party&apos;s rights. [Your Website Name] reserves the right to
               remove any of Your Content from this Website at any time without
               notice.
             </p>
@@ -99,7 +99,7 @@ const TermsAndConditionsPage = () => {
           <section className="mb-10">
             <h2 className="text-3xl font-bold mb-4">5. No warranties</h2>
             <p className="mb-4">
-              This Website is provided "as is," with all faults, and [Your
+              This Website is provided &quot;as is,&quot; with all faults, and [Your
               Website Name] express no representations or warranties, of any
               kind related to this Website or the materials contained on this
               Website. Also, nothing contained on this Website shall be
