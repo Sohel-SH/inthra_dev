@@ -32,6 +32,7 @@ interface Post {
 
 interface PostPageProps {
   params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 async function getPost(slug: string): Promise<Post> {
