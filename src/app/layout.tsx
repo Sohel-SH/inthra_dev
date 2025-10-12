@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
-import { Header } from '@/components/Header'
+import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Inthra - Insider Threat Detection',
+    default: 'Inthra - Advanced Insider Threat Detection and Monitoring',
     template: '%s | Inthra'
   },
-  description: 'Advanced insider threat detection and monitoring tool that leverages Al',
+  description: 'Inthra offers an advanced platform for comprehensive insider threat detection and monitoring. Leveraging cutting-edge Graph Analytics and custom rules, Inthra provides real-time security insights to protect your organization from internal risks and data breaches. Stay ahead of threats with intelligent anomaly detection and proactive risk management.',
   keywords: ['insider threat detection', 'security', 'AI', 'Graph Analytics', 'threat monitoring', 'cybersecurity', 'insider risk management', 'advanced threat detection', 'threat intelligence', 'risk assessment', 'data protection', 'fraud detection', 'anomaly detection', 'security analytics', 'threat prevention', 'compliance monitoring'],
   authors: [{ name: 'Inthra Team' }],
   creator: 'Inthra',

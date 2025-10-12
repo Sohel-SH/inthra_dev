@@ -99,12 +99,10 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex-1 section-padding bg-gradient-to-br bg-fixed bg-center bg-cover"
+      className="relative flex-1 section-padding bg-gradient-to-br bg-fixed bg-center bg-cover hero-section"
       style={{
         backgroundImage: `url(${bgImage.src})`,
         minHeight: heroHeight ? `${heroHeight}px` : '100vh',
-        alignContent: 'center',
-        // minHeight: '500px', // Ensure minimum height even on small screens
       }}
     >
       <div className="absolute inset-0 bg-black/30 z-0" />

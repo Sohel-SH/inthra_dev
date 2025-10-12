@@ -66,7 +66,7 @@ export function Contact() {
         </div>
 
         <div className="flex justify-center">
-          <div className="card text-white p-4 md:p-6 rounded-lg" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+          <div className="card text-white p-4 md:p-6 rounded-lg contact-card">
             <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center">Send us a message</h3>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">

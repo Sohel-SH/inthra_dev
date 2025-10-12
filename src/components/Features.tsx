@@ -4,7 +4,7 @@ export function Features() {
   return (
     <section
       id="features"
-      className="relative bg-black text-white py-16 md:py-24 bg-center bg-cover bg-no-repeat"
+      className="relative bg-black text-white py-16 md:py-24 features-section"
       style={{
         backgroundImage: `url(${bgImage.src})`,
       }}
