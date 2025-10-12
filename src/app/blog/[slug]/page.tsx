@@ -30,7 +30,7 @@ interface Post {
   content: any[]; // Sanity rich text
 }
 
-interface Props {
+interface PostPageProps {
   params: { slug: string };
 }
 
@@ -62,7 +62,7 @@ async function getPost(slug: string): Promise<Post> {
   return post;
 }
 
-export default async function PostPage({ params }: Props) {
+export default async function PostPage({ params }: PostPageProps) {
   const post = await getPost(params.slug);
 
   if (!post) {
