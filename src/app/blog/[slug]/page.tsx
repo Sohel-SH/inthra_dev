@@ -31,8 +31,8 @@ interface Post {
 }
 
 interface PostPageProps {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string }>; // Changed to Promise
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Also changed to Promise
 }
 
 async function getPost(slug: string): Promise<Post> {
@@ -64,7 +64,8 @@ async function getPost(slug: string): Promise<Post> {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPost(params.slug);
+  const { slug } = await params; // Await params here
+  const post = await getPost(slug);
 
   if (!post) {
     return <div className="container-custom py-16">Post not found</div>;
