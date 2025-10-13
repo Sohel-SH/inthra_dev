@@ -162,6 +162,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   width: "100%",
                   inset: 0,
                   color: "transparent",
+                  borderRadius: "0.25rem",
                 }}
               />
             )}
