@@ -4,8 +4,8 @@ import React from "react";
 const PrivacyPolicyPage = () => {
   return (
     <main className="bg-gradient-to-b from-[#010b15] via-[#031525] to-[#052642]">
-      <div className="container-custom px-6 sm:px-6 py-16 md:py-20">
-        <div className="container-custom text-white">
+      <div className="container-custom px-4 sm:px-6 md:px-6 py-16 md:py-20">
+        <div className="container-custom px-0 sm:px-[1rem] md:px-[1rem] text-white">
           <div className="text-sm breadcrumbs text-white mb-2">
             <ul className="flex items-center space-x-2">
               <li>
