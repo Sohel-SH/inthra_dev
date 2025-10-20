@@ -171,27 +171,7 @@ const Header = () => {
 
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/blog"
-              className="relative text-lg font-medium text-white hover:text-[#a3ff4e] transition-colors duration-200 group"
-            >
-              Blog
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/privacy-policy"
-              className="relative text-lg font-medium text-white hover:text-[#a3ff4e] transition-colors duration-200 group"
-            >
-              Privacy Policy
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/terms-and-conditions"
-              className="relative text-lg font-medium text-white hover:text-[#a3ff4e] transition-colors duration-200 group"
-            >
-              Terms and Conditions
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            {/* Menu items moved to footer quick links */}
           </div>
         </div>
       </nav>
@@ -203,30 +183,7 @@ const Header = () => {
         }`}
       >
         <div className="px-4 pt-2 pb-4 space-y-2">
-          <Link
-            href="/blog"
-            className="block text-lg font-medium w-fit text-white hover:text-[#a3ff4e] transition-colors duration-200 group py-2"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Blog
-            <span className="block w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/privacy-policy"
-            className="block text-lg font-medium w-fit text-white hover:text-[#a3ff4e] transition-colors duration-200 group py-2"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Privacy Policy
-            <span className="block w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/terms-and-conditions"
-            className="block text-lg font-medium w-fit text-white hover:text-[#a3ff4e] transition-colors duration-200 group py-2"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Terms and Conditions
-            <span className="block w-0 h-[2px] bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] transition-all duration-300 group-hover:w-full"></span>
-          </Link>
+          {/* Menu items moved to footer quick links */}
         </div>
       </div>
     </header>

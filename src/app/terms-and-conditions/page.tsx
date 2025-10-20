@@ -21,178 +21,153 @@ const TermsAndConditionsPage = () => {
             Terms and Conditions
           </h1>
 
+          <p className="mb-4 text-sm">Effective Date: 17/10/2025</p>
+
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">1. Introduction</h2>
             <p className="mb-4 text-sm">
-              Welcome to [Your Website Name]! These terms and conditions outline
-              the rules and regulations for the use of [Your Website
-              Name]&apos;s Website, located at [Your Website URL].
-            </p>
-            <p className="mb-4 text-sm">
-              By accessing this website we assume you accept these terms and
-              conditions. Do not continue to use [Your Website Name] if you do
-              not agree to take all of the terms and conditions stated on this
-              page.
+              Welcome to Inthra (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms &amp; Conditions (&quot;Terms&quot;) govern your use of our website <a href="https://inthra.io" className="text-blue-400 hover:underline">https://inthra.io</a>. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree, please do not use our website.
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">
-              2. Intellectual Property Rights
+              2. Use of Our Website
             </h2>
             <p className="mb-4 text-sm">
-              Other than the content you own, under these Terms, [Your Website
-              Name] and/or its licensors own all the intellectual property
-              rights and materials contained in this Website.
+              You agree to use our website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else&apos;s use and enjoyment of the website.
             </p>
             <p className="mb-4 text-sm">
-              You are granted limited license only for purposes of viewing the
-              material contained on this Website.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">3. Restrictions</h2>
-            <p className="mb-4 text-sm">
-              You are specifically restricted from all of the following:
+              You must not:
             </p>
             <ul className="list-disc list-inside ml-4">
               <li className="mb-2 text-sm">
-                publishing any Website material in any other media;
+                Use the website in any way that may damage, disable, overburden, or impair it.
               </li>
               <li className="mb-2 text-sm">
-                selling, sublicensing and/or otherwise commercializing any
-                Website material;
+                Attempt to gain unauthorised access to any part of the website, server, or connected systems.
               </li>
               <li className="mb-2 text-sm">
-                publicly performing and/or showing any Website material;
-              </li>
-              <li className="mb-2 text-sm">
-                using this Website in any way that is or may be damaging to this
-                Website;
-              </li>
-              <li className="mb-2 text-sm">
-                using this Website in any way that impacts user access to this
-                Website;
-              </li>
-              <li className="mb-2 text-sm">
-                using this Website contrary to applicable laws and regulations,
-                or in any way may cause harm to the Website, or to any person or
-                business entity;
-              </li>
-              <li className="mb-2 text-sm">
-                engaging in any data mining, data harvesting, data extracting or
-                any other similar activity in relation to this Website;
-              </li>
-              <li className="mb-2 text-sm">
-                using this Website to engage in any advertising or marketing.
+                Use the website to send, knowingly receive, upload, download, or use any material that is unlawful or harmful.
               </li>
             </ul>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">4. Your Content</h2>
+            <h2 className="text-[1.25rem] font-bold mb-4">
+              3. Intellectual Property Rights
+            </h2>
             <p className="mb-4 text-sm">
-              In these Website Standard Terms and Conditions, &quot;Your
-              Content&quot; shall mean any audio, video text, images or other
-              material you choose to display on this Website. By displaying Your
-              Content, you grant [Your Website Name] a non-exclusive, worldwide
-              irrevocable, sub licensable license to use, reproduce, adapt,
-              publish, translate and distribute it in any and all media.
+              All content on this website — including text, graphics, logos, icons, images, and software — is the property of Inthra or its licensors and is protected by copyright, trademark, and other intellectual property laws.
             </p>
             <p className="mb-4 text-sm">
-              Your Content must be your own and must not be invading any
-              third-party&apos;s rights. [Your Website Name] reserves the right
-              to remove any of Your Content from this Website at any time
-              without notice.
+              You may view, download, or print content for personal and non-commercial use only. You may not reproduce, distribute, or exploit any content for commercial purposes without our prior written consent.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">5. No warranties</h2>
+            <h2 className="text-[1.25rem] font-bold mb-4">4. User-Provided Information</h2>
             <p className="mb-4 text-sm">
-              This Website is provided &quot;as is,&quot; with all faults, and
-              [Your Website Name] express no representations or warranties, of
-              any kind related to this Website or the materials contained on
-              this Website. Also, nothing contained on this Website shall be
-              interpreted as advising you.
+              If you submit any information through our contact form or other means, you agree that:
+            </p>
+            <ul className="list-disc list-inside ml-4">
+              <li className="mb-2 text-sm">
+                The information you provide is accurate and up to date.
+              </li>
+              <li className="mb-2 text-sm">
+                You will not provide false or misleading information.
+              </li>
+              <li className="mb-2 text-sm">
+                You understand that your personal information will be handled in accordance with our Privacy Policy.
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-[1.25rem] font-bold mb-4">
+              5. Links to Other Websites
+            </h2>
+            <p className="mb-4 text-sm">
+              Our website may contain links to third-party websites. These links are provided for convenience only. We do not control or endorse these websites and are not responsible for their content, accuracy, or privacy practices. Accessing third-party sites is at your own risk.
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">
-              6. Limitation of liability
+              6. Disclaimer
             </h2>
             <p className="mb-4 text-sm">
-              In no event shall [Your Website Name], nor any of its officers,
-              directors and employees, be held liable for anything arising out
-              of or in any way connected with your use of this Website whether
-              such liability is under contract. [Your Website Name], including
-              its officers, directors and employees shall not be held liable for
-              any indirect, consequential or special liability arising out of or
-              in any way related to your use of this Website.
+              The content on <a href="https://inthra.io" className="text-blue-400 hover:underline">https://inthra.io</a> is provided for general informational purposes only. We make no representations or warranties, express or implied, regarding:
             </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">7. Severability</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li className="mb-2 text-sm">
+                The accuracy, completeness, or reliability of the information provided.
+              </li>
+              <li className="mb-2 text-sm">
+                The availability or uninterrupted operation of the website.
+              </li>
+            </ul>
             <p className="mb-4 text-sm">
-              If any provision of these Terms is found to be invalid under any
-              applicable law, such provisions shall be deleted without affecting
-              the remaining provisions herein.
+              To the fullest extent permitted by law, we disclaim all liability for any loss or damage arising from your use of the website or reliance on its content.
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">
-              8. Variation of Terms
+              7. Limitation of Liability
             </h2>
             <p className="mb-4 text-sm">
-              [Your Website Name] is permitted to revise these Terms at any time
-              as it sees fit, and by using this Website you are expected to
-              review these Terms on a regular basis.
+              To the maximum extent permitted by law, Inthra and its affiliates, officers, employees, or agents shall not be liable for any indirect, incidental, consequential, or punitive damages arising from:
             </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">9. Assignment</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li className="mb-2 text-sm">
+                Use or inability to use the website
+              </li>
+              <li className="mb-2 text-sm">
+                Any errors, omissions, or inaccuracies in the website&apos;s content
+              </li>
+              <li className="mb-2 text-sm">
+                Any unauthorized access to or use of our servers or data
+              </li>
+            </ul>
             <p className="mb-4 text-sm">
-              The [Your Website Name] is allowed to assign, transfer, and
-              subcontract its rights and/or obligations under these Terms
-              without any notification. However, you are not allowed to assign,
-              transfer, or subcontract any of your rights and/or obligations
-              under these Terms.
+              Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraud, or any other liability which cannot be excluded under UK law.
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">
-              10. Entire Agreement
+              8. Indemnification
             </h2>
             <p className="mb-4 text-sm">
-              These Terms constitute the entire agreement between [Your Website
-              Name] and you in relation to your use of this Website, and
-              supersede all prior agreements and understandings.
+              You agree to indemnify and hold harmless Inthra from and against any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the website or any violation of these Terms.
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-[1.25rem] font-bold mb-4">
-              11. Governing Law & Jurisdiction
+              9. Changes to These Terms
             </h2>
             <p className="mb-4 text-sm">
-              These Terms will be governed by and interpreted in accordance with
-              the laws of the State of [Your State], and you submit to the
-              non-exclusive jurisdiction of the state and federal courts located
-              in [Your State] for the resolution of any disputes.
+              We may revise these Terms from time to time by updating this page. The updated Terms will take effect immediately upon publication. We encourage you to review this page periodically to stay informed.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-[1.25rem] font-bold mb-4">12. Contact Us</h2>
+            <h2 className="text-[1.25rem] font-bold mb-4">
+              10. Governing Law
+            </h2>
             <p className="mb-4 text-sm">
-              If you have any questions about these Terms and Conditions, please
-              contact us at: [Your Contact Email]
+              These Terms are governed by and construed in accordance with the laws of England and Wales. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+            </p>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-[1.25rem] font-bold mb-4">
+              11. Contact Us
+            </h2>
+            <p className="mb-4 text-sm">
+              If you have any questions or concerns about these Terms &amp; Conditions, please contact us via the contact form on our website: <a href="https://inthra.io" className="text-blue-400 hover:underline">https://inthra.io</a>
             </p>
           </section>
         </div>
