@@ -127,7 +127,7 @@ const Header = () => {
       }
     >
       <nav className="container-custom ">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-center h-16 md:h-20">
           {/* Logo */}
           <div className="text-2xl font-bold">
             <Link href="/">
@@ -136,56 +136,8 @@ const Header = () => {
               </span>
             </Link>
           </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {/* Menu items moved to footer quick links */}
-          </div>
         </div>
       </nav>
-
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`backdrop-blur-md shadow-md md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-4 pt-2 pb-4 space-y-2">
-          {/* Menu items moved to footer quick links */}
-        </div>
-      </div>
     </header>
   );
 };
