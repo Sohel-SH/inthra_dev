@@ -1,39 +1,61 @@
-import bgImage from '@/images/Nofo-2048x896.jpg';
+'use client'
+
+import { useScrollTyping } from '@/hooks/useInView';
+import React, { useEffect, useRef, useState } from 'react'
 
 export function Features() {
+  // const [aboutTyped, setAboutTyped] = useState('')
+  // const startedRef = useRef(false)
+
+  // useEffect(() => {
+  //   if (startedRef.current) return
+  //   startedRef.current = true
+
+  //   const aboutFull = 'Inthra.'
+  //   let index = 0
+  //   const interval = setInterval(() => {
+  //     index += 1
+  //     setAboutTyped(aboutFull.slice(0, index))
+  //     if (index >= aboutFull.length) clearInterval(interval)
+  //   }, 70)
+
+  //   return () => clearInterval(interval)
+  // }, [])
+
+    const { typed: aboutTyped, elementRef } = useScrollTyping("Inthra.", 70);
+
   return (
     <section
       id="features"
-      className="relative bg-black text-white py-16 md:py-24 features-section"
-      style={{
-        backgroundImage: `url(${bgImage.src})`,
-      }}
+      className="relative bg-white text-gray-900 py-16 md:py-24"
     >
-      <div className="absolute inset-0 bg-black/60 z-0" />
-      <div className="relative z-10 container-custom">
+      <div className="relative container-custom transition-all duration-700">
         <div className="mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-center">
-            About{' '}
-            <span className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent">
-              Inthra?
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            About{" "}
+            <span
+              ref={elementRef}
+              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret"
+            >
+              {aboutTyped}
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-300 text-center max-w-3xl mx-auto px-4">
-            We combine cutting-edge technology with proven strategies to deliver exceptional results for your business.
+          <p className="text-base md:text-lg text-gray-600 text-center max-w-3xl mx-auto px-4">
+            Built by insider threat engineers, Inthra turns complex user activity data into clear, actionable insight.
           </p>
         </div>
 
-        <div className="w-full space-y-8 md:space-y-0">
-          <div className="w-full md:w-1/2 p-4 md:p-6">
-            <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">WHO WE ARE</h3>
-            <p className="text-sm md:text-base text-gray-300">
-              Founded by two leading insider threat security engineers, Inthra is an innovative insider threat tool that leverages Al, visual graph analytics and true intelligent detection rules. Inthra aims to detect near-real-time Insider activity, revolutionising the current insider threat detection capabilities currently found on the market from reactive into a proactive security measure, minimising the impact to your business.
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="p-4 md:p-6 border border-gray-100 rounded-2xl shadow-sm transition-transform duration-500 hover:-translate-y-1 hover:shadow-md">
+            <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Who we are</h3>
+            <p className="text-sm md:text-base text-gray-600">
+              Founded by two leading insider threat security engineers, Inthra is an innovative insider threat tool that leverages Al, visual graph analytics and true intelligent detection rules. Inthra aims to detect near-real-time Insider activity, revolutionising the current insider threat detection capabilities currently found on the market from reactive into a proactive security measure, minimising the impact to your business.
             </p>
           </div>
-          <div className="w-full md:w-1/2 md:float-end p-4 md:p-6">
-            <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">HOW DOES IT WORK?</h3>
-            <p className="text-sm md:text-base text-gray-300">
-              When it comes to business, we have defined and solved the problem of multiple, messy data outputs into visually appealing and fully interactive graph analytics combined with LLM based searches, the focus is on clear and easy to query data. Inthra combines the data collected with further contextual information at every stage of analysis. Inthra makes hunting easy. Leaving traditional Monolog of ETL Inthra reimagines how staff data can be extracted and recorded via use of our simple workflow design.
+          <div className="p-4 md:p-6 border border-gray-100 rounded-2xl shadow-sm transition-transform duration-500 hover:-translate-y-1 hover:shadow-md">
+            <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">How it works</h3>
+            <p className="text-sm md:text-base text-gray-600">
+              When it comes to business, we have defined and solved the problem of multiple, messy data outputs into visually appealing and fully interactive graph analytics combined with LLM based searches, the focus is on clear and easy to query data. Inthra combines the data collected with further contextual information at every stage of analysis. Inthra makes hunting easy. Leaving traditional Monolog of ETL Inthra reimagines how staff data can be extracted and recorded via use of our simple workflow design.
             </p>
           </div>
         </div>

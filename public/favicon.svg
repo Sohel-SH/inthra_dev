@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Blue square background (#233EFF) -->
+  <rect width="64" height="64" fill="#233EFF" rx="8" ry="8" />
+  <!-- White 'I' centered -->
+  <rect x="30" y="18" width="4" height="28" fill="#FFFFFF" rx="1" />
+</svg>
+
+

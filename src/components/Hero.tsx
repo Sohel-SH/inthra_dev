@@ -1,123 +1,99 @@
 'use client'
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import bgImage from '@/images/whoweare1.png';
+import { useEffect, useRef, useState } from 'react'
 
+// Simplified hero with clean white background, no imagery
 export function Hero() {
-  const [heroHeight, setHeroHeight] = useState<number | null>(null);
-  const [headerHeight, setHeaderHeight] = useState<number>(0);
-  const headerRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [typedText, setTypedText] = useState('')
+  const fullText = 'Insider Threat Detection.'
+  const [hasStarted, setHasStarted] = useState(false)
+  const [heroHeight, setHeroHeight] = useState<number | null>(null)
 
-  // Function to update hero height - defined without useCallback initially
-  const updateHeroHeightFn = () => {
-    // Use window.innerHeight for viewport height
-    const windowHeight = window.innerHeight;
-    
-    // Get header height using the ref
-    let currentHeaderHeight = headerHeight;
-    
-    if (headerRef.current) {
-      currentHeaderHeight = headerRef.current.offsetHeight;
-      if (currentHeaderHeight !== headerHeight) {
-        setHeaderHeight(currentHeaderHeight);
-      }
-    } else {
-      // Fallback to querySelector if ref is not set
-      const header = document.querySelector('header');
-      if (header) {
-        headerRef.current = header as HTMLElement;
-        currentHeaderHeight = header.offsetHeight;
-        setHeaderHeight(currentHeaderHeight);
-      }
-    }
-    
-    setHeroHeight(windowHeight);
-  };
-  
-  // Wrap the function in useCallback to prevent unnecessary re-renders
-  const updateHeroHeight = useCallback(updateHeroHeightFn, [headerHeight]);
-  
-  // Use useLayoutEffect to ensure measurements happen before browser paint
-  useLayoutEffect(() => {
-    // Try to get header reference
-    if (!headerRef.current) {
-      headerRef.current = document.querySelector('header');
-    }
-    
-    // Set up ResizeObserver to detect header size changes
-    let resizeObserver: ResizeObserver | null = null;
-    
-    if (headerRef.current) {
-      resizeObserver = new ResizeObserver(() => {
-        updateHeroHeight();
-      });
-      
-      resizeObserver.observe(headerRef.current);
-    }
-    
-    // Initial calculation with a slight delay to ensure DOM is fully loaded
-    const initialTimer = setTimeout(() => {
-      updateHeroHeight();
-    }, 100);
-    
-    // Cleanup
-    return () => {
-      if (resizeObserver && headerRef.current) {
-        resizeObserver.unobserve(headerRef.current);
-        resizeObserver.disconnect();
-      }
-      clearTimeout(initialTimer);
-    };
-  }, [updateHeroHeight]);
-  
-  // Update hero height when header height changes
+  // Measure viewport height minus header height
   useEffect(() => {
-    updateHeroHeight();
-  }, [updateHeroHeight]);
-  
-  // Update hero height on window resize and load
-  useEffect(() => {
-    // Add event listeners for resize and load events
-    window.addEventListener('resize', updateHeroHeight);
-    window.addEventListener('load', updateHeroHeight);
-    
-    // Run updateHeroHeight immediately
-    updateHeroHeight();
-    
-    // Run updateHeroHeight after a short delay to ensure all elements are rendered
-    const delayedUpdate = setTimeout(() => {
-      updateHeroHeight();
-    }, 500);
-    
-    // Cleanup
+    const updateHeroHeight = () => {
+      if (typeof window === 'undefined') return
+
+      const viewportHeight = window.innerHeight
+      const header = document.querySelector('header') as HTMLElement | null
+      const headerHeight = header?.offsetHeight ?? 0
+
+      setHeroHeight(viewportHeight - headerHeight)
+    }
+
+    updateHeroHeight()
+    window.addEventListener('resize', updateHeroHeight)
+
     return () => {
-      window.removeEventListener('resize', updateHeroHeight);
-      window.removeEventListener('load', updateHeroHeight);
-      clearTimeout(delayedUpdate);
-    };
-  }, [updateHeroHeight]);
+      window.removeEventListener('resize', updateHeroHeight)
+    }
+  }, [])
+
+  useEffect(() => {
+    const node = sectionRef.current
+    if (!node || hasStarted) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setHasStarted(true)
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(node)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [hasStarted])
+
+  useEffect(() => {
+    if (!hasStarted) return
+
+    let index = 0
+    const interval = setInterval(() => {
+      index += 1
+      setTypedText(fullText.slice(0, index))
+      if (index >= fullText.length) {
+        clearInterval(interval)
+      }
+    }, 80)
+
+    return () => clearInterval(interval)
+  }, [hasStarted, fullText])
 
   return (
     <section
-      className="relative flex-1 section-padding bg-gradient-to-br bg-fixed bg-center bg-cover hero-section"
-      style={{
-        backgroundImage: `url(${bgImage.src})`,
-        minHeight: heroHeight ? `${heroHeight}px` : '100vh',
-      }}
+      ref={sectionRef}
+      className="section-padding bg-white animate-fade-in relative"
+      style={heroHeight ? { minHeight: `${heroHeight}px`, top: '80px',display: 'flex', alignItems: 'center' } : { minHeight: '100vh', top: '80px',display: 'flex', alignItems: 'center' }}
     >
-      <div className="absolute inset-0 bg-black/30 z-0" />
-      <div className="relative z-10 container-custom h-full flex items-center justify-center">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up">
-            The New Era Of Insider{' '}
-            <span className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent">
-              Threat Detection
-            </span>
-          </h1>
-          <p className="text-m sm:text-l text-white mb-8 max-w-xl mx-auto font-light animate-slide-up">
-            Detect insider threats before they strike. Inthra combines AI, Graph Analytics, and custom rules to deliver real-time security insights. Stay ahead. Stay secure.
-          </p>
+      {/* Soft animated blue glow behind hero content */}
+      <div className="pointer-events-none absolute inset-x-0 -top-24 -z-10 flex justify-center">
+        <div className="w-[520px] h-[260px] rounded-full bg-[#233EFF]/10 blur-3xl animate-float-slow" />
+      </div>
+
+      <div className="container-custom flex flex-col items-center text-center">
+        <span className="mb-4 inline-flex items-center rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 animate-slide-up">
+          Insider Threat Detection, Reimagined
+        </span>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-4 max-w-4xl animate-slide-up">
+          The new era of
+        </h1>
+        <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 max-w-4xl animate-slide-up">
+          <span className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret">
+            {typedText}
+          </span>
         </div>
+        <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl animate-slide-up">
+          Inthra combines AI, graph analytics, and intelligent rules to surface risky behavior in minutes,
+          not months—so your team can act before an incident becomes a breach.
+        </p>
       </div>
     </section>
   )

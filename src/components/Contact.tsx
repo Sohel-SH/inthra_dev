@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from 'emailjs-com'
+import { useScrollTyping } from '@/hooks/useInView'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,25 @@ export function Contact() {
   })
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  // const [touchTyped, setTouchTyped] = useState('')
+  // const touchFull = 'Touch.'
+  // const startedRef = useRef(false)
+
+  // useEffect(() => {
+  //   if (startedRef.current) return
+  //   startedRef.current = true
+
+  //   let index = 0
+  //   const interval = setInterval(() => {
+  //     index += 1
+  //     setTouchTyped(touchFull.slice(0, index))
+  //     if (index >= touchFull.length) clearInterval(interval)
+  //   }, 80)
+
+  //   return () => clearInterval(interval)
+  // }, [])
+
+  const { typed: touchTyped, elementRef } = useScrollTyping("Touch.", 80);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,27 +71,32 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding py-12 md:py-20 text-white bg-gradient-to-b from-[#010b15] via-[#031525] to-[#052642]">
-      <div className="container-custom px-4 sm:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-            Get In{' '}
-            <span className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent">
-              Touch
+    <section id="contact" className="section-padding py-12 md:py-20 bg-white">
+      <div className="container-custom px-4 sm:px-6 transition-all duration-700">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold text-center">
+            Get In{" "}
+            <span
+              ref={elementRef}
+              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret"
+            >
+              {touchTyped}
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto px-4">
+          <p className="text-base md:text-lg text-gray-600 mx-auto px-4">
             Partner with leading enterprise security teams driving the next generation of insider threat detection. Contact us to learn more or request early access.
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <div className="card text-white p-4 md:p-6 rounded-lg contact-card">
-            <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center">Send us a message</h3>
+        <div className="flex justify-center mt-10 md:mt-12">
+          <div className="w-full max-w-xl bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm transition-transform duration-500 hover:-translate-y-1 hover:shadow-md">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-center text-gray-900">
+              Send us a message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                  <div>
-                   <label htmlFor="FirstName" className="block text-sm font-medium mb-2">
+                   <label htmlFor="FirstName" className="block text-sm font-medium mb-2 text-gray-700">
                      First Name *
                    </label>
                    <input
@@ -81,12 +106,12 @@ export function Contact() {
                     value={formData.FirstName}
                     onChange={handleChange}
                     required
-                    className="bg-transparent w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+                    className="bg-white w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="LastName" className="block text-sm font-medium mb-1 md:mb-2">
+                  <label htmlFor="LastName" className="block text-sm font-medium mb-1 md:mb-2 text-gray-700">
                     Last Name
                   </label>
                   <input
@@ -95,14 +120,14 @@ export function Contact() {
                     name="LastName"
                     value={formData.LastName}
                     onChange={handleChange}
-                    className="bg-transparent w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+                    className="bg-white w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="Your last name"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1 md:mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-1 md:mb-2 text-gray-700">
                   Email *
                 </label>
                 <input
@@ -112,13 +137,13 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-transparent w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+                  className="bg-white w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[20px] md:rounded-[30px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1 md:mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-1 md:mb-2 text-gray-700">
                   Message *
                 </label>
                 <textarea
@@ -128,7 +153,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="bg-transparent w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[15px] md:rounded-[20px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+                  className="bg-white w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-[15px] md:rounded-[20px] focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="Write your message here..."
                 />
               </div>
@@ -145,9 +170,9 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className={`relative overflow-hidden w-full text-sm md:text-base py-3 md:py-4 font-bold 
+                className={`relative overflow-hidden w-full text-sm md:text-base text-white py-3 md:py-4 font-bold 
                   rounded-lg md:rounded-xl transition-all duration-300
-                  bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81]
+                  bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff]
                   ${status === 'loading' ? 'cursor-not-allowed' : 'hover:shadow-lg hover:scale-[1.02]'}`}
               >
                 {/* Dark shimmer effect background */}

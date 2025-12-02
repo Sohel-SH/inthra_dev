@@ -12,9 +12,34 @@
   }
 }
 
+/* Vend Sans font setup – make sure the font files exist in /public/fonts */
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer components {
   .header-fixed {
-    background-color: transparent;
+    background-color: #233EFF;
     position: fixed;
     top: 0;
     left: 0;
@@ -86,4 +111,50 @@
 .animate-shimmer {
   background-size: 200% 100%;
   animation: shimmer 1.5s linear infinite;
+}
+
+/* Typing caret for hero headline */
+/* .typing-caret {
+  border-right: 5px solid #233EFF;
+  padding-right: 2px;
+  animation: caret-blink 1s steps(2, start) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 100% {
+    border-color: #233EFF;
+  }
+} */
+
+/* Soft floating animation for hero background glow */
+@keyframes float-slow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.typing-caret::after {
+  content: '|';
+  color: #233EFF;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0
+  }
 }

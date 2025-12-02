@@ -131,7 +131,7 @@ const Header = () => {
           {/* Logo */}
           <div className="text-2xl font-bold">
             <Link href="/">
-              <span className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent gradient">
+              <span className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-white gradient">
                 INTHRA
               </span>
             </Link>

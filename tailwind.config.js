@@ -22,7 +22,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        // Global default font for the entire site
+        sans: ['"Vend Sans"', 'system-ui', 'sans-serif'],
       },
       screens: {
         'xs': '475px',
