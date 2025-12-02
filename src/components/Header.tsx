@@ -119,12 +119,15 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
+    // <header
+    //   className={
+    //     isMobileMenuOpen
+    //       ? "bg-white/10 backdrop-blur-md shadow-md top-0 z-50 shrink-0 header-fixed"
+    //       : "shadow-md top-0 z-50 shrink-0 header-fixed"
+    //   }
+    // >
     <header
-      className={
-        isMobileMenuOpen
-          ? "bg-white/10 backdrop-blur-md shadow-md top-0 z-50 shrink-0 header-fixed"
-          : "shadow-md top-0 z-50 shrink-0 header-fixed"
-      }
+      className={"shadow-md top-0 z-50 shrink-0 header-fixed"}
     >
       <nav className="container-custom ">
         <div className="flex items-center justify-center h-16 md:h-20">

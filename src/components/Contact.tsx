@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { useScrollTyping } from '@/hooks/useInView'
 
@@ -13,23 +13,6 @@ export function Contact() {
   })
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  // const [touchTyped, setTouchTyped] = useState('')
-  // const touchFull = 'Touch.'
-  // const startedRef = useRef(false)
-
-  // useEffect(() => {
-  //   if (startedRef.current) return
-  //   startedRef.current = true
-
-  //   let index = 0
-  //   const interval = setInterval(() => {
-  //     index += 1
-  //     setTouchTyped(touchFull.slice(0, index))
-  //     if (index >= touchFull.length) clearInterval(interval)
-  //   }, 80)
-
-  //   return () => clearInterval(interval)
-  // }, [])
 
   const { typed: touchTyped, elementRef } = useScrollTyping("Touch.", 80);
 

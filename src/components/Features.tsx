@@ -1,26 +1,9 @@
 'use client'
 
+import React from 'react'
 import { useScrollTyping } from '@/hooks/useInView';
-import React, { useEffect, useRef, useState } from 'react'
 
 export function Features() {
-  // const [aboutTyped, setAboutTyped] = useState('')
-  // const startedRef = useRef(false)
-
-  // useEffect(() => {
-  //   if (startedRef.current) return
-  //   startedRef.current = true
-
-  //   const aboutFull = 'Inthra.'
-  //   let index = 0
-  //   const interval = setInterval(() => {
-  //     index += 1
-  //     setAboutTyped(aboutFull.slice(0, index))
-  //     if (index >= aboutFull.length) clearInterval(interval)
-  //   }, 70)
-
-  //   return () => clearInterval(interval)
-  // }, [])
 
     const { typed: aboutTyped, elementRef } = useScrollTyping("Inthra.", 70);
 
