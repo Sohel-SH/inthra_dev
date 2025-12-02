@@ -113,10 +113,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     // <header
