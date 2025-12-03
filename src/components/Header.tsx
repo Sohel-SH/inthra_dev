@@ -125,11 +125,18 @@ const Header = () => {
     //       : "shadow-md top-0 z-50 shrink-0 header-fixed"
     //   }
     // >
-    <header
-      className={"shadow-md top-0 z-50 shrink-0 header-fixed"}
-    >
-      <nav className="container-custom ">
-        <div className="flex items-center justify-center h-16 md:h-20">
+    <header className="top-0 z-50 shrink-0 header-fixed">
+      <nav
+        className="container-custom header-nav"
+        style={{
+          backgroundColor: "#233EFF",
+          borderRadius: "999px",
+          boxShadow: "0 5px 25px rgba(0, 0, 0, 0.25)",
+          border: "1px solid rgba(255, 255, 255, 0.15)",
+          maxWidth: "100%",
+        }}
+      >
+        <div className="flex items-center justify-center h-[3.2rem] md:h-[3.2rem]">
           {/* Logo */}
           <div className="text-2xl font-bold">
             <Link href="/">

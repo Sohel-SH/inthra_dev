@@ -11,7 +11,7 @@ export function Footer() {
           <div className="md:col-span-2 flex flex-col items-center md:items-start">
             <Link
               href="/"
-              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#233EFF] via-[#4b63ff] to-[#8c9eff] bg-clip-text text-transparent"
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#233EFF] via-[#4b63ff] to-[#8c9eff] bg-clip-text text-[#233EFF]"
             >
               INTHRA
             </Link>

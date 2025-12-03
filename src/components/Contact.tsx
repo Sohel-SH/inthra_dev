@@ -61,7 +61,7 @@ export function Contact() {
             Get In{" "}
             <span
               ref={elementRef}
-              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret"
+              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-[#233EFF] typing-caret"
             >
               {touchTyped}
             </span>
@@ -155,7 +155,7 @@ export function Contact() {
                 disabled={status === 'loading'}
                 className={`relative overflow-hidden w-full text-sm md:text-base text-white py-3 md:py-4 font-bold 
                   rounded-lg md:rounded-xl transition-all duration-300
-                  bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff]
+                  bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#233EFF]
                   ${status === 'loading' ? 'cursor-not-allowed' : 'hover:shadow-lg hover:scale-[1.02]'}`}
               >
                 {/* Dark shimmer effect background */}

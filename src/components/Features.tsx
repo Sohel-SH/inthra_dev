@@ -18,7 +18,7 @@ export function Features() {
             About{" "}
             <span
               ref={elementRef}
-              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret"
+              className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-[#233EFF] typing-caret"
             >
               {aboutTyped}
             </span>

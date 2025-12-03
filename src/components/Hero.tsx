@@ -86,7 +86,7 @@ export function Hero() {
           The new era of
         </h1>
         <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 max-w-4xl animate-slide-up">
-          <span className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-transparent typing-caret">
+          <span className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-[#233EFF] typing-caret">
             {typedText}
           </span>
         </div>

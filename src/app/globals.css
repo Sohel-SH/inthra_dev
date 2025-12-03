@@ -39,13 +39,23 @@
 
 @layer components {
   .header-fixed {
-    background-color: #233EFF;
+    /* background-color: #233EFF; */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 90;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
+  }
+
+  .header-nav {
+    margin: 1rem 10rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .header-nav {
+      margin: 1rem !important;
+    }
   }
 
   .hero-section {
