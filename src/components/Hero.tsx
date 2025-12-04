@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-// Simplified hero with clean white background, no imagery
+// Hero with looping video background
 export function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null)
   const [typedText, setTypedText] = useState('')
@@ -16,10 +16,10 @@ export function Hero() {
       if (typeof window === 'undefined') return
 
       const viewportHeight = window.innerHeight
-      const header = document.querySelector('header') as HTMLElement | null
-      const headerHeight = header?.offsetHeight ?? 0
+      // const header = document.querySelector('header') as HTMLElement | null
+      // const headerHeight = header?.offsetHeight ?? 0
 
-      setHeroHeight(viewportHeight - headerHeight)
+      setHeroHeight(viewportHeight)
     }
 
     updateHeroHeight()
@@ -70,23 +70,50 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="section-padding bg-white animate-fade-in relative"
-      style={heroHeight ? { minHeight: `${heroHeight}px`, top: '80px',display: 'flex', alignItems: 'center' } : { minHeight: '100vh', top: '80px',display: 'flex', alignItems: 'center' }}
+      className="section-padding animate-fade-in relative overflow-hidden"
+      style={
+        heroHeight
+          ? {
+              minHeight: `${heroHeight}px`,
+              // top: '80px',
+              display: 'flex',
+              alignItems: 'center',
+            }
+          : {
+              minHeight: '100vh',
+              // top: '80px',
+              display: 'flex',
+              alignItems: 'center',
+            }
+      }
     >
+      {/* Video background */}
+      <video
+        className="absolute h-full w-full object-cover"
+        src="/heroBanner.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Light grey overlay on top of video for readability */}
+      <div className="absolute inset-0 bg-gray-100/20" />
+
       {/* Soft animated blue glow behind hero content */}
-      <div className="pointer-events-none absolute inset-x-0 -top-24 -z-10 flex justify-center">
-        <div className="w-[520px] h-[260px] rounded-full bg-[#233EFF]/10 blur-3xl animate-float-slow" />
+      <div className="pointer-events-none absolute inset-x-0 -top-24 z-0 flex justify-center">
+        <div className="w-[520px] h-[260px] rounded-full bg-[#233EFF]/25 blur-3xl animate-float-slow" />
       </div>
 
-      <div className="container-custom flex flex-col items-center text-center">
-        <span className="mb-4 inline-flex items-center rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 animate-slide-up">
+      <div className="container-custom relative z-10 flex flex-col items-center text-center">
+        <span className="mb-4 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium animate-slide-up">
           Insider Threat Detection, Reimagined
         </span>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-4 max-w-4xl animate-slide-up">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 max-w-4xl animate-slide-up">
           The new era of
         </h1>
         <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 max-w-4xl animate-slide-up">
-          <span className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#8c9eff] bg-clip-text text-[#233EFF] typing-caret">
+          <span className="bg-gradient-to-r from-[#233EFF] via-[#233EFF] to-[#233EFF] bg-clip-text text-transparent typing-caret">
             {typedText}
           </span>
         </div>
