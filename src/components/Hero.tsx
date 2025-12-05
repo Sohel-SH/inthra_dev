@@ -87,15 +87,18 @@ export function Hero() {
             }
       }
     >
-      {/* Video background */}
-      <video
-        className="absolute h-full w-full object-cover"
-        src="/heroBanner.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+      {/* Video background (only render when hero is in view to avoid heavy initial load) */}
+      {hasStarted && (
+        <video
+          className="absolute h-full w-full object-cover"
+          src="/heroBanner.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      )}
 
       {/* Light grey overlay on top of video for readability */}
       <div className="absolute inset-0 bg-gray-100/20" />
