@@ -71,10 +71,10 @@ export default async function PostPage({ params }: PostPageProps) {
     return <div className="container-custom py-16">Post not found</div>;
   }
   return (
-    <main className="bg-gradient-to-b from-[#010b15] via-[#031525] to-[#052642]">
-      <div className="container-custom px-4 sm:px-6 md:px-6 py-16 md:py-20">
+    <main className="">
+      <div className="container-custom px-4 sm:px-6 md:px-6 py-24">
         <div className="container-custom px-0 sm:px-[1rem] md:px-[1rem]">
-          <div className="text-sm breadcrumbs text-white mb-4">
+          <div className="text-sm breadcrumbs mb-4">
             <ul className="flex items-center space-x-2">
               <li>
                 <Link href="/">Home</Link>
@@ -84,14 +84,14 @@ export default async function PostPage({ params }: PostPageProps) {
                 <Link href="/blog">Blog</Link>
               </li>
               <li className="inline-flex items-center">&gt;</li>
-              <li className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent">
+              <li className="text-[#233EFF]">
                 {post.title.length > 20
                   ? post.title.substring(0, 20) + "..."
                   : post.title}
               </li>
             </ul>
           </div>
-          <h1 className="mb-8 text-3xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight dark:text-white">
+          <h1 className="mb-8 text-3xl leading-tight font-bold sm:text-4xl sm:leading-tight">
             {post.title}
           </h1>
           <div className="border-stroke dark:border-stroke-dark mb-10 grid items-center gap-x-10 gap-y-5 border-b pb-8 min-[645px]:grid-cols-[auto_1fr_auto]">
@@ -106,9 +106,13 @@ export default async function PostPage({ params }: PostPageProps) {
                   decoding="async"
                   data-nimg="1"
                   className="shrink-0 rounded-full object-cover"
+                  style={{
+                    height: "40px",
+                    width: "40px",
+                  }}
                 />
               )}
-              <figcaption className="text-white dark:text-white whitespace-nowrap">
+              <figcaption className="whitespace-nowrap">
                 <span className="sr-only">Posted</span> By{" "}
                 <a href="/blogs/author/musharof-chy">
                   <span className="absolute inset-0" aria-hidden="true"></span>
@@ -116,7 +120,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 </a>
               </figcaption>
             </figure>
-            <dl className="text-white dark:text-white flex items-center gap-5">
+            <dl className="flex items-center gap-5">
               <dt className="flex items-center gap-3">
                 <svg
                   width="15"
@@ -168,7 +172,7 @@ export default async function PostPage({ params }: PostPageProps) {
             )}
           </div>
           {/* {post.mainImage && <img className="w-full object-cover mb-8" />} */}
-          <div className="prose max-w-none text-white dark:text-white">
+        <div className="prose max-w-none">
             <PortableText
               value={post.content}
               components={{

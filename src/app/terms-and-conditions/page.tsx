@@ -3,21 +3,21 @@ import React from "react";
 
 const TermsAndConditionsPage = () => {
   return (
-    <main className="bg-gradient-to-b from-[#010b15] via-[#031525] to-[#052642]">
-      <div className="container-custom px-4 sm:px-6 md:px-6 py-16 md:py-20">
-        <div className="container-custom px-0 sm:px-[1rem] md:px-[1rem] text-white">
-          <div className="text-sm breadcrumbs text-white mb-2">
+    <main>
+      <div className="container-custom px-4 sm:px-6 md:px-6 py-24">
+        <div className="container-custom px-0 sm:px-[1rem] md:px-[1rem]">
+          <div className="text-sm breadcrumbs mb-2">
             <ul className="flex items-center space-x-2">
               <li>
                 <Link href="/">Home</Link>
               </li>
               <li className="inline-flex items-center">&gt;</li>
-              <li className="bg-gradient-to-r from-[#4ade80] via-[#a3ff4e] to-[#cfff81] bg-clip-text text-transparent">
+              <li className="text-[#233EFF]">
                 Terms and Conditions
               </li>
             </ul>
           </div>
-          <h1 className="text-2xl font-bold text-white mb-8">
+          <h1 className="text-2xl font-bold mb-8">
             Terms and Conditions
           </h1>
 
