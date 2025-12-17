@@ -21,6 +21,13 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex flex-wrap justify-center md:justify-end h-full items-end gap-3 sm:gap-6 md:gap-6">
               <Link
+                href="/"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 group"
+              >
+                Home
+                <span className="block w-0 h-[2px] bg-gradient-to-r from-[#233EFF] via-[#4b63ff] to-[#8c9eff] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link
                 href="/blog"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 group"
               >
