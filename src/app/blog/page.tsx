@@ -21,7 +21,7 @@ interface Post {
 
 async function getPosts(): Promise<Post[]> {
   const posts = await client.fetch(
-    `*[_type == "blogs"] | order(publishedAt desc) {
+    `*[_type == "blogs" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id,
       title,
       slug,
