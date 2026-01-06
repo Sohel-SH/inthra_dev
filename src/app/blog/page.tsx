@@ -39,9 +39,7 @@ async function getPosts(): Promise<Post[]> {
       categories[] -> {
         title
       }
-    }`,
-    {},
-    {next: {revalidate: 5}}
+    }`
   );
   return posts;
 }
