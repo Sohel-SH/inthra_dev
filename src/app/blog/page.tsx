@@ -1,6 +1,5 @@
 import { client } from "@/lib/sanity";
 import Link from "next/link";
-export const dynamic = "force-static";
 export const revalidate = 5;
 
 
