@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   if (!SECRET) {
     return new Response("Invalid secret", { status: 401 });
   }
-  if (body.secret !== SECRET) {
+  if (body?.secret != SECRET) {
     return new Response("secret not matched", { status: 401 });
   }
 
