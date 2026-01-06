@@ -1,5 +1,7 @@
 import { client } from "@/lib/sanity";
 import Link from "next/link";
+export const revalidate = 5;
+
 
 interface Post {
   _id: string;
@@ -39,7 +41,9 @@ async function getPosts(): Promise<Post[]> {
       categories[] -> {
         title
       }
-    }`
+    }`,
+    {},
+    {cache: 'no-store'}
   );
   return posts;
 }
@@ -64,6 +68,10 @@ export default async function BlogPage() {
           </div>
           <h1 className="text-2xl font-bold mb-8">Blog List</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.length === 0 && (
+              <p className="text-gray-500">No blogs available</p>
+            )}
+
             {posts.map((post) => (
               <Link
                 href={`/blog/${post.slug.current}`}
