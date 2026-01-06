@@ -9,8 +9,11 @@ export async function POST(req: NextRequest) {
 
   const SECRET = process.env.SANITY_REVALIDATE_SECRET; // ← SAME SPELLING AS ENV
 
-  if (!SECRET || body.secret !== SECRET) {
+  if (!SECRET) {
     return new Response("Invalid secret", { status: 401 });
+  }
+  if (body.secret !== SECRET) {
+    return new Response("secret not matched", { status: 401 });
   }
 
   // Refresh blog list page
