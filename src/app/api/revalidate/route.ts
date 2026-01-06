@@ -20,7 +20,17 @@ export async function POST(req: NextRequest) {
   // Refresh blog list page
   revalidatePath("/blog");
 
-  return new Response("Revalidated", { status: 200 });
+  return new Response(
+    JSON.stringify({
+      secretFromBody: body?.secret || null,
+      envSecret: SECRET || null,
+      fullBody: body || null
+    }, null, 2),
+    {
+      status: 200,
+      headers: { "Content-Type": "application/json" }
+    }
+  );
 }
 
 // optional manual check
