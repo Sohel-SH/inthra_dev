@@ -8,7 +8,8 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
 
   const SECRET = process.env.SANITY_REVALIDATE_SECRET; // ← SAME SPELLING AS ENV
-
+  console.log("BODY SECRET FROM SANITY:", body.secret);
+  console.log("ENV SECRET FROM VERCEL:", SECRET);
   if (!SECRET) {
     return new Response("Invalid secret", { status: 401 });
   }
