@@ -1,6 +1,8 @@
 import { client } from "@/lib/sanity";
 import Link from "next/link";
+export const dynamic = "force-static";
 export const revalidate = 5;
+
 
 
 interface Post {
@@ -43,7 +45,7 @@ async function getPosts(): Promise<Post[]> {
       }
     }`,
     {},
-    {cache: 'no-store'}
+    {next: {revalidate: 5}}
   );
   return posts;
 }
