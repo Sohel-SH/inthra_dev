@@ -1,8 +1,5 @@
 import { client } from "@/lib/sanity";
 import Link from "next/link";
-export const revalidate = 5;
-
-
 
 interface Post {
   _id: string;
