@@ -5,7 +5,7 @@ import crypto from "crypto";
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
-  const SECRET = process.env.SANITY_REVALIDATE_SECRET;
+  const SECRET = "mySuperSecretKey123";
   const timestamp = new Date().toISOString();
 
   // Log request start
