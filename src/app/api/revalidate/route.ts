@@ -151,6 +151,7 @@ export async function GET(req: NextRequest) {
       config: {
         secretConfigured: !!SECRET,
         secretLength: SECRET?.length || 0,
+        secret: SECRET,
       },
       requestInfo: {
         headers,
