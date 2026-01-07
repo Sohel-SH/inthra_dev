@@ -95,8 +95,11 @@ export async function POST(req: NextRequest) {
           error: "Invalid secret",
           timestamp,
           receivedFrom: secretFromBody ? "body" : secretFromQuery ? "query" : secretFromHeader ? "header" : "none",
-          secretFromBody: secretFromBody,
-          secretFromHeader: secretFromHeader,
+          secret_body: secretFromBody,
+          secret_query: secretFromQuery,
+          secret_header: secretFromHeader,
+          providedSecret: providedSecret,
+          expectedSecret: SECRET,
         }),
         { 
           status: 401,
