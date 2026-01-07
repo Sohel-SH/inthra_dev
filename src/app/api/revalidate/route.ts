@@ -1,6 +1,6 @@
 // app/api/revalidate/route.ts
 
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { NextResponse, NextRequest } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -44,9 +44,6 @@ export async function POST(request: NextRequest) {
       await revalidatePath('/');
       console.log('Revalidated: /');
     }
-
-    // Alternative: Use tags if you've set them up
-    // revalidateTag('blogs');
 
     return NextResponse.json({ 
       revalidated: true,
