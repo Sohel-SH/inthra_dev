@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
 }
 
 // Optional: Handle GET requests for testing
-export async function GET(request: NextRequest) {
+export async function GET() {
   return NextResponse.json({ 
     message: 'Webhook endpoint is working. Use POST to trigger revalidation.',
     timestamp: new Date().toISOString()
