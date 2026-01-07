@@ -96,7 +96,6 @@ export async function POST(req: NextRequest) {
           timestamp,
           receivedFrom: secretFromBody ? "body" : secretFromQuery ? "query" : secretFromHeader ? "header" : "none",
           secretFromBody: secretFromBody,
-          secretFromQuery: secretFromQuery,
           secretFromHeader: secretFromHeader,
         }),
         { 
